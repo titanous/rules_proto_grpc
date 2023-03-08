@@ -8,6 +8,7 @@ proto_plugin(
     ],
     options = ["file_descriptor_set"],
     output_directory = True,
+    separate_options_flag = True,
     tool = "//rust/crates:protoc-gen-prost__protoc-gen-prost",
     visibility = ["//visibility:public"],
 )
@@ -19,6 +20,7 @@ proto_plugin(
     ],
     options = ["no_include"],
     output_directory = True,
+    separate_options_flag = True,
     tool = "//rust/crates:protoc-gen-tonic__protoc-gen-tonic",
     visibility = ["//visibility:public"],
 )
@@ -30,6 +32,7 @@ proto_plugin(
     ],
     options = ["no_features"],
     output_directory = True,
+    separate_options_flag = True,
     tool = "//rust/crates:protoc-gen-prost-crate__protoc-gen-prost-crate",
     visibility = ["//visibility:public"],
 )
