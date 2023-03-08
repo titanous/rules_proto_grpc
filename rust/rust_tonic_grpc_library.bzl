@@ -41,7 +41,7 @@ def rust_tonic_grpc_library(name, **kwargs):  # buildifier: disable=function-doc
         deps = kwargs.get("prost_deps", [Label("//rust/crates:prost"), Label("//rust/crates:prost-types")]) +
                [kwargs.get("tonic_dep", Label("//rust/crates:tonic"))] +
                kwargs.get("deps", []),
-        proc_macro_deps = [kwargs.get("prost_derive_dep", Label("//rust/crates:prost-derive"))],
+        proc_macro_deps = kwargs.get("proc_macro_deps", []) + [kwargs.get("prost_derive_dep", Label("//rust/crates:prost-derive"))],
         **{
             k: v
             for (k, v) in kwargs.items()
